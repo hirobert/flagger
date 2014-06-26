@@ -1,4 +1,6 @@
 flagger
 =======
 
-(Flask + Swagger = Flagger) Given a flask app, flagger will generate swagger configuration files
+**(Flask + Swagger = Flagger)**
+
+Given a flask app with minimal docstrings, will generate swagger configuration files.
