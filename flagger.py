@@ -24,6 +24,7 @@ def flask_to_swagger(app, groups=[]):
 					app_dict[resource_match].append(generate_configuration(app, rule))
 				else:
 					app_dict[resource_match] = [generate_configuration(app, rule)]
+
 	bundle_to_json(app_dict)
 
 def bundle_to_json(app_dict):
@@ -107,12 +108,14 @@ def parse_docstring(docstring):
 					docstring_dict['vars'].append(var_dict)
 			else:
 				docstring_dict['lines'].append(line)
+
 	return docstring_dict
 
 
 if __name__ == '__main__':
 	import sys, os
-	sys.path.insert(0, os.path.abspath('../../Noun-API/app/'))
+	app_directory = 'app/'
+	sys.path.insert(0, os.path.abspath(app_directory))
 
 	from noun import create_app
 	app = create_app()
